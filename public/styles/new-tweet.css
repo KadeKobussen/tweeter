@@ -1,0 +1,136 @@
+.form{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  flex-direction: column;
+  margin: auto;
+  border-bottom: #00878c;
+  font-family: Source Sans Pro bold, sans-serif;
+}
+.new-tweet {
+ width: 90%;
+}
+
+.tweet-maker{
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  width:100%;
+  height: 250px;
+  align-items: center;
+}
+
+button{
+  color:white;
+  background-color: #00878c;
+  font-family: Bungee;
+}
+
+.counter{
+  display: flex;
+  font-family: Bungee;
+}
+
+.row{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 5PX;
+}
+
+.label1{
+  font-weight: 600;
+  border: none;
+  background: none;
+  border-bottom-style: solid;
+  border-bottom-color:#00878c;
+  border-bottom-width: 5px;
+  padding-bottom: 2px;
+  height: 50px;
+}
+
+.posted-tweets{
+  width: 100%;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: #00878c 5px solid;
+  flex-wrap: wrap;
+}
+
+.posted-tweets:hover{
+  box-shadow: 10px 5px #c8e4e4;
+}
+
+.content{
+  width: 95%;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content:flex-start;
+  border-bottom: #00878c 5px solid;
+  font-family: Source Sans Pro bold, sans-serif;
+}
+.top-of-tweet{
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.pfpuser{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  
+}
+
+.sub-text{
+  padding-top:10px;
+  display: flex;
+  width: 90%;
+  flex-direction: row;
+  align-items:flex-start;
+  justify-content: space-between;
+}
+
+.tweet-date{
+  display: flex;
+  margin: 0%;
+  justify-content: center;
+  height: 40px;
+  align-items:center;
+}
+
+.sub-text-icons{
+  display: flex;
+  flex-direction: row;
+  width: 10%;
+  height: 40px;
+  justify-content:space-evenly;
+  align-items:center;
+}
+
+.heart:hover{
+  color: #00878c;
+}
+.retweet:hover{
+  color: #00878c;
+}
+.flag:hover{
+  color: #00878c;
+}
+
+.tag{
+  color:#c8e4e4
+}
+
+.tweet-text{
+  display: flex;
+  padding-left: 3%;
+  flex-wrap: wrap;
+}
+
+

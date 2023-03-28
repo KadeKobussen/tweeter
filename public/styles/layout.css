@@ -15,11 +15,24 @@ html {
  */
 
 body {
+  width: 100%;
   color: #545149;
   background-color: #f4f1ec;
+  font-family: Source Sans Pro, sans-serif;
   font-size: 24px;
 }
 
+nav {
+  font-family: Bungee, sans-serif;
+}
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+ main {
+  display:flex;
+  width: 90%;
+  align-items: center;
+  background-color: #f4f1ec;
+  font-family: Source Sans Pro, sans-serif;
+  margin: auto;
+ }

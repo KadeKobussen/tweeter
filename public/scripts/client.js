@@ -1,32 +1,8 @@
 $(document).ready(function() {
   // Declare data variable here
-  const tweets = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png",
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1461116232227
-    },
-    {
-      "user": {
-        "name": "Einstein",
-        "avatars": "https://i.imgur.com/73hZDYK.png",
-        "handle": "@Albert"
-      },
-      "content": {
-        "text": "Imagination is more important than knowledge."
-      },
-      "created_at": 1461116232227
-    }
-  ];
-
   // Define the createTweetElement and renderTweets functions here
   function createTweetElement(tweetData) {
+    const date = new Date(tweetData.created_at);
     const $tweet = $('<article>').addClass('posted-tweets').html(`
       <header class="top-of-tweet">
         <div class="pfpuser">
@@ -57,8 +33,27 @@ $(document).ready(function() {
     tweets.forEach((tweetData) => {
       const $tweet = createTweetElement(tweetData);
       $tweetsContainer.append($tweet);
+    
+    
     });
   }
+
+  function loadTweets() {
+    $.ajax({
+      method: 'GET',
+      url: '/tweets',
+      dataType: 'json',
+      success: function(tweets) {
+        renderTweets(tweets);
+      },
+      error: function(err) {
+        console.error('Error fetching tweets', err);
+      }
+    });
+  }
+
+  // Load the tweets when the page is ready
+  loadTweets();
 
   // Call the renderTweets function with the tweets array
   renderTweets(tweets);

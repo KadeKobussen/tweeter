@@ -1,12 +1,9 @@
-.form{
+.container{
   display: flex;
-  width: 100%;
+  align-items: center;
   justify-content: center;
-  flex-direction: column;
-  margin: auto;
-  border-bottom: #00878c;
-  font-family: Source Sans Pro bold, sans-serif;
 }
+
 .new-tweet {
  width: 90%;
  justify-content: center;
@@ -21,32 +18,18 @@
   height: 250px;
   align-items: center;
 }
-.container{
+
+.form{
   display: flex;
-  align-items: center;
+  width: 100%;
   justify-content: center;
+  flex-direction: column;
+  margin: auto;
+  border-bottom: #00878c;
+  font-family: Source Sans Pro bold, sans-serif;
 }
 
-button{
-  color:white;
-  background-color: #00878c;
-  font-family: Bungee;
-  border-radius: 5px;
-}
-
-.counter{
-  display: flex;
-  font-family: Bungee;
-}
-
-.row{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding-top: 5PX;
-}
-
-.label1{
+textarea{
   font-weight: 600;
   border: none;
   background: none;
@@ -57,101 +40,24 @@ button{
   height: 50px;
 }
 
-.posted-tweets{
-  width: 100%;
-  height: 250px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border: #00878c 5px solid;
-  flex-wrap: wrap;
-  margin-bottom: 10px;
-}
-
-.posted-tweets:hover{
-  box-shadow: 0 0 10px #65b8b8;
-}
-
-.content{
-  width: 95%;
-  margin: 0;
+.button-counter{
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
-  justify-content:flex-start;
-  border-bottom: #00878c 5px solid;
-  font-family: Source Sans Pro bold, sans-serif;
-}
-.top-of-tweet{
-  width: 90%;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
   justify-content: space-between;
+  padding-top: 5PX;
 }
-.pfpuser{
+
+button{
+  color:white;
+  background-color: #00878c;
+  font-family: Bungee;
+  border-radius: 5px;
+  border-color: transparent;
+}
+
+.counter{
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  
-}
-
-.sub-text{
-  padding-top:10px;
-  display: flex;
-  width: 90%;
-  flex-direction: row;
-  align-items:flex-start;
-  justify-content: space-between;
-}
-
-.tweet-date{
-  display: flex;
-  margin: 0%;
-  justify-content: center;
-  height: 40px;
-  align-items:center;
-}
-
-.sub-text-icons{
-  display: flex;
-  flex-direction: row;
-  width: 10%;
-  height: 40px;
-  justify-content:space-evenly;
-  align-items:center;
-}
-
-.heart:hover{
-  color: #00878c;
-}
-.retweet:hover{
-  color: #00878c;
-}
-.flag:hover{
-  color: #00878c;
-}
-
-.tag{
-  color:#c8e4e4
-}
-
-.tweet-text{
-  display: flex;
-  padding-left: 3%;
-  flex-wrap: wrap;
-}
-
-.tweets-container{
-display: flex;
-flex-direction: column-reverse;
-}
-
-
-.avatar{
-  display: flex;
-  padding-top: 10px;
-  padding-right: 5px;
+  font-family: Bungee;
 }
 
 .error-container {
@@ -173,6 +79,97 @@ flex-direction: column-reverse;
     transform: translateY(0%);
     opacity: 0;
   }
+}
+
+
+.tweets-container{
+display: flex;
+flex-direction: column-reverse;
+}
+
+.posted-tweets{
+  width: 100%;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: #00878c 5px solid;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.posted-tweets:hover{
+  box-shadow: 0 0 10px #65b8b8;
+}
+
+.top-of-tweet{
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.pfpuser{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.avatar{
+  display: flex;
+  padding-top: 10px;
+  padding-right: 5px;
+}
+
+.tag{
+  color:#c8e4e4
+}
+
+.content{
+  width: 95%;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content:flex-start;
+  border-bottom: #00878c 5px solid;
+  font-family: Source Sans Pro bold, sans-serif;
+}
+
+.sub-text{
+  padding-top:10px;
+  display: flex;
+  width: 90%;
+  flex-direction: row;
+  align-items:flex-start;
+  justify-content: space-between;
+}
+
+.tweet-date{
+  display: flex;
+  margin: 0%;
+  justify-content: center;
+  height: 40px;
+  align-items:center;
+}
+.sub-text-icons{
+  display: flex;
+  flex-direction: row;
+  width: 10%;
+  height: 40px;
+  justify-content:space-evenly;
+  align-items:center;
+}
+
+.heart:hover{
+  color: #00878c;
+}
+.retweet:hover{
+  color: #00878c;
+}
+.flag:hover{
+  color: #00878c;
 }
 
 /* Desktop styles */

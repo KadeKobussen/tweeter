@@ -154,4 +154,16 @@ flex-direction: column-reverse;
   background-color: #e74c3c;
   border-radius: 5px;
   display: none;
+  animation: slideUp 5s ease-out forwards;
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(-50%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 0;
+  }
 }

@@ -5,6 +5,7 @@ $(document).ready(function() {
   // Submit tweet form with validation
   $('.new-tweet form').on('submit', function(event) {
     event.preventDefault();
+    hideError();
     let tweetLength = $(this).find('textarea').val().length;
     if (tweetLength === 0) {
       showError('Error: Tweet content is not present');
@@ -14,6 +15,7 @@ $(document).ready(function() {
       showError('Error: Tweet content is too long');
     return;
     }
+    $('.error-container').slideUp();
     let formData = $(this).serialize();
     $.ajax({
       url: '/tweets',
@@ -88,6 +90,10 @@ $(document).ready(function() {
     const $errorContainer = $('.new-tweet .error-container');
     $errorContainer.text(message);
     $errorContainer.show();
+  }
+
+  function hideError() {
+    $('.new-tweet .error-container').slideUp();
   }
 
   // Load the tweets when the page is ready

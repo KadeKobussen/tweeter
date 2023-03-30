@@ -24,6 +24,7 @@ button{
   color:white;
   background-color: #00878c;
   font-family: Bungee;
+  border-radius: 5px;
 }
 
 .counter{
@@ -146,3 +147,11 @@ flex-direction: column-reverse;
   padding-right: 5px;
 }
 
+.error-container {
+  margin-top: 5px;
+  padding: 5px 10px;
+  color: white;
+  background-color: #e74c3c;
+  border-radius: 5px;
+  display: none;
+}

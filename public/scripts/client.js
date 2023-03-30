@@ -7,12 +7,12 @@ $(document).ready(function() {
     event.preventDefault();
     let tweetLength = $(this).find('textarea').val().length;
     if (tweetLength === 0) {
-      alert('Error: Tweet content is not present');
+      showError('Error: Tweet content is not present');
       return;
     }
     if (tweetLength > 140) {
-      alert('Error: Tweet content is too long');
-      return;
+      showError('Error: Tweet content is too long');
+    return;
     }
     let formData = $(this).serialize();
     $.ajax({
@@ -82,6 +82,12 @@ $(document).ready(function() {
         console.error('Error fetching tweets', err);
       }
     });
+  }
+  
+  function showError(message) {
+    const $errorContainer = $('.new-tweet .error-container');
+    $errorContainer.text(message);
+    $errorContainer.show();
   }
 
   // Load the tweets when the page is ready

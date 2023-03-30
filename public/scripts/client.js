@@ -1,5 +1,34 @@
+
+
 $(document).ready(function() {
   // Declare data variable here
+  // Submit tweet form with validation
+  $('.new-tweet form').on('submit', function(event) {
+    event.preventDefault();
+    let tweetLength = $(this).find('textarea').val().length;
+    if (tweetLength === 0) {
+      alert('Error: Tweet content is not present');
+      return;
+    }
+    if (tweetLength > 140) {
+      alert('Error: Tweet content is too long');
+      return;
+    }
+    let formData = $(this).serialize();
+    $.ajax({
+      url: '/tweets',
+      method: 'POST',
+      data: formData,
+      success: function() {
+        console.log('am i the drama?');
+        $.get('/tweets', function(data) { // Load tweets using AJAX
+          renderTweets([data[data.length-1]]); // Render only the last tweet
+        });
+        $('.new-tweet form')[0].reset(); // Reset form
+        $('.new-tweet form .counter').text(140); // Reset character counter
+      }
+    });
+  });
   // Define the createTweetElement and renderTweets functions here
   function createTweetElement(tweetData) {
     const date = new Date(tweetData.created_at);
@@ -23,21 +52,24 @@ $(document).ready(function() {
         </div>
       </footer>
     `);
+    // protects text field from xss
+    $tweet.find('.tweet-text').text(tweetData.content.text);
 
     return $tweet;
   }
 
   function renderTweets(tweets) {
-    const $tweetsContainer = $('#tweets-container');
-    $tweetsContainer.empty(); // Clear the container before rendering new tweets
-    tweets.forEach((tweetData) => {
-      const $tweet = createTweetElement(tweetData);
-      $tweetsContainer.append($tweet);
-    
-    
-    });
+    $('.tweets-container').empty(); // clear the container first
+    // loop through the tweets array
+    for (const tweet of tweets) {
+      // create a new tweet element
+      const $tweet = createTweetElement(tweet);
+  
+      // add the new tweet element to the top of the tweets container
+      $('#tweets-container').prepend($tweet);
+    }
   }
-
+  
   function loadTweets() {
     $.ajax({
       method: 'GET',
@@ -54,7 +86,6 @@ $(document).ready(function() {
 
   // Load the tweets when the page is ready
   loadTweets();
-
   // Call the renderTweets function with the tweets array
-  renderTweets(tweets);
 });
+

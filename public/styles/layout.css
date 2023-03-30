@@ -30,7 +30,6 @@ nav {
  */
  main {
   display:flex;
-  width: 90%;
   align-items: center;
   background-color: #f4f1ec;
   font-family: Source Sans Pro, sans-serif;

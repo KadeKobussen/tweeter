@@ -34,7 +34,9 @@
   <!-- Composer-char-counter JS-->
   <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
   <!--timeago-->
+  <script src="//unpkg.com/timeago.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
 </head>
 
 
@@ -51,12 +53,12 @@
     </div>
   </nav>
 
+  <div class="page-main">
   <!--header-->
   <header class="header">
     <div class="pfp">
       <img src="/images/profile-hex.png">
     </div>
-    <br>
     <div class="user">
       <h2>Your Name</h2>
     </div>
@@ -68,7 +70,6 @@
   <main class="container">
     <section class="new-tweet">
     <div class="tweet-maker">
-    <h2>Compose Tweet</h2>
     <form class='form'method="POST" action="/tweets/">
       <textarea name="text" class='label1' id="tweet-text" placeholder="What are you humming about?"></textarea>
       <div class="row">
@@ -82,6 +83,7 @@
     
   </section>
 </main>
+</div>
 </body>
 
 </html>

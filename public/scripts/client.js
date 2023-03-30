@@ -1,5 +1,4 @@
 
-
 $(document).ready(function() {
   // Declare data variable here
   // Submit tweet form with validation
@@ -33,7 +32,8 @@ $(document).ready(function() {
   });
   // Define the createTweetElement and renderTweets functions here
   function createTweetElement(tweetData) {
-    const date = new Date(tweetData.created_at);
+    const Date = timeago.format(tweetData.created_at, "en_US");
+    //const date = new Date(tweetData.created_at);
     const $tweet = $('<article>').addClass('posted-tweets').html(`
       <header class="top-of-tweet">
         <div class="pfpuser">
@@ -46,7 +46,7 @@ $(document).ready(function() {
         <h4 class="tweet-text">${tweetData.content.text}</h4>
       </div>
       <footer class="sub-text">
-        <h5 class="tweet-date">${new Date(tweetData.created_at)}</h5>
+        <h5 class="tweet-date">${Date}</h5>
         <div class="sub-text-icons">
           <h6 class="flag"><i class="fa-solid fa-flag"></i></h6>
           <h6 class="retweet"><i class="fa-solid fa-retweet"></i></h6>
